@@ -2,16 +2,17 @@
 
 This is a web application that will generate for the user a variable number of prime numbers, starting with 2.
 
-To run, you must have both `python` and `pip` installed on your system.
+To run this application, you must have `go` installed and the `GOPATH` environment correctly set.After this, simply run
 
-For Debian systems:
 ```
-sudo apt-get install python-dev python-pip
-``` 
-
-For Max OSX:
-```
-brew install python
+go get -u github.com/gorilla/mux
 ```
 
-After installation, simply run `python prime.py` in it's home directory, and it will host a web-app on port 80 (by default)
+to install gorilla mux.
+
+Then, you may run
+```
+go run prime.go
+```
+
+in it's home directory, and the webapp will be hosted on port 80 (by default)
