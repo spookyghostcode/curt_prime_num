@@ -1,3 +1,21 @@
-<html>
-<h1>Test<h1>
+<html ng-app="primeApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="js/primeApp.js"></script>
+    </head>
+
+    <body ng-controller="primeController">
+        <h1> Prime Calculator </h1>
+        <div>
+            <div>
+                <input type="number" name="maxNum" ng-model="maxNum">
+                <button type="button" ng-click="calcPrimes(maxNum)" >Submit</button>
+            </div>
+
+            <div ng-repeat="num in primeNums">
+                {{num}}
+            </div>
+        <div>
+    </body>
+
 </html>
