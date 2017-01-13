@@ -1,19 +1,31 @@
 <html ng-app="primeApp">
     <head>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/custom.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="js/primeApp.js"></script>
     </head>
 
     <body ng-controller="primeController">
-        <h1> Prime Calculator </h1>
+        <h1 class="title"> Prime Calculator </h1>
         <div>
-            <div>
-                <input type="number" name="maxNum" ng-model="maxNum">
-                <button type="button" ng-click="calcPrimes(maxNum)" >Submit</button>
+            <div class="errorText">
+               <b>{{error}}</b>
+            </div>
+            <div class="helpText">
+                Enter the upper bound of the prime numbers you wish to calculate (2-1000):
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="calcPrimes(maxNum)">Calculate</button>
+                    </span>
+                    <input type="number" class="form-control" placeholder="Upper bound" ng-model="maxNum" style="width: 685px;">
+                </div>
             </div>
 
-            <div ng-repeat="num in primeNums">
-                {{num}}
+            <div class="results" align="center">
+	        <span class="nums" ng-repeat="num in primeNums">{{num}}{{$last ? '' : ', '}}</span>
             </div>
         <div>
     </body>

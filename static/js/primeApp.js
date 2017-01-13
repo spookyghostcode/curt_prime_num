@@ -6,6 +6,8 @@ primeApp.controller("primeController", function ($scope, $http) {
     $scope.error = ""
 
     $scope.calcPrimes = function(maxNum) { 
+        $scope.primeNums = []
+        $scope.error = ""
         $http({
             url: "/primes",
             method: "GET",

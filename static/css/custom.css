@@ -1,0 +1,36 @@
+div.helpText {
+   color: #AACCFF;
+   padding: 10px;
+   padding-left: 14px;
+   font-family: Helvetica;
+   font-size: 12pt
+}
+
+div.errorText {
+   font-size: 13pt;
+   font-family: Helvetica;
+   color: #DD111F;
+   padding: 10px;
+   padding-left: 14px;
+}
+
+div.results {
+   color: #AACCFF;
+   font-family: Helvetica;
+   font-size: 13pt;
+   padding: 14px;
+   display: block;
+   max-width: 800px;
+   text-align: center;
+}
+
+h1.title {
+   padding: 15px;
+   font-family: Helvetica;
+   text-align: center;
+   color: #AACCFF;
+}
+
+body {
+    background-color: #222233
+}

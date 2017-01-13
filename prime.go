@@ -24,21 +24,30 @@ func calcPrimes(writer http.ResponseWriter, req *http.Request) {
 
     var param string
 
+    //Making sure that the argument is passed in
     param = req.URL.Query().Get("max")
     if param == "" {
-        errorMsg := ErrorResp{Error: "Argument 'max' not provided"}
+        errorMsg := ErrorResp{Error: "No number provided"}
         writer.WriteHeader(http.StatusBadRequest)
         json.NewEncoder(writer).Encode(errorMsg)
         return
     }
 
+    //Making sure that the argument is an integer
     max, err := strconv.Atoi(param)
     if err != nil {
-        errorMsg := ErrorResp{Error: "Argument 'max' must be an integer"}
+        errorMsg := ErrorResp{Error: "Must be integer"}
         writer.WriteHeader(http.StatusBadRequest)
         json.NewEncoder(writer).Encode(errorMsg)
         return
     }
+
+   if (max < 2) || (max > 1000) {
+      errorMsg := ErrorResp{Error: "Number cannot be smaller than 2, or larger than 1000"}
+      writer.WriteHeader(http.StatusBadRequest)
+      json.NewEncoder(writer).Encode(errorMsg)
+      return
+   }
 
     var primeList []int
     var prime bool
