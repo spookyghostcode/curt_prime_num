@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 
 @app.route('/primes', methods=["GET"])
 def primes():
@@ -30,5 +30,9 @@ def primes():
     resp = jsonify({"Success": prime_list})
     return resp
 
+@app.route('/', methods=["GET"])
+def homepage():
+    return app.send_static_file('index.html')
+
 if __name__ == "__main__":
-    app.run(port=8000)
+    app.run(port=80)
